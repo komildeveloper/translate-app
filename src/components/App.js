@@ -6,7 +6,7 @@ import ColorContext from '../contexts/ColorContext';
 class App extends Component {
   state = { language: 'uzbek', color: 'primary', text: 'Select a language :' };
 
-  onLanguageAndOnColorChange = (language, color, text) => {
+  onLanguageColorTextChange = (language, color, text) => {
     this.setState({ language, color, text });
   };
 
@@ -19,14 +19,12 @@ class App extends Component {
             : 'Tilni tanlang :'}
           <i
             className='flag us'
-            onClick={() =>
-              this.onLanguageAndOnColorChange('english', 'primary')
-            }
+            onClick={() => this.onLanguageColorTextChange('english', 'primary')}
             style={{ cursor: 'pointer', marginLeft: '5px' }}
           />
           <i
             className='flag uz'
-            onClick={() => this.onLanguageAndOnColorChange('uzbek', 'red')}
+            onClick={() => this.onLanguageColorTextChange('uzbek', 'red')}
             style={{ cursor: 'pointer' }}
           />
         </div>
